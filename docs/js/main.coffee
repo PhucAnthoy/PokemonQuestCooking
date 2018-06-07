@@ -19,6 +19,7 @@ $(document).ready ->
             if(filled == "false")
               $("#pot").find("div")[index].dataset.filled = "true"
               ingredients[index] = parseInt(this.dataset.ingredient)
+              image = "img/placed/" + image.slice(image.search("img") + 16)
               $($("#pot").find("div")[index]).find("img")[0].src = image
               ingredientsInPot++
               test = false
@@ -35,6 +36,14 @@ $(document).ready ->
       $(this).find("img")[0].src = ""
       this.dataset.filled = "false"
       ingredientsInPot--
+    if($("#output").find("img")[0].dataset.filled == "true")
+      $("#output").find("img")[0].dataset.filled = "false"
+      $("#output").find("img")[0].src = ""
+      $("#output").find("img")[1].dataset.filled = "false"
+      $("#output").find("img")[1].src = ""
+      $("#output").find("img")[2].dataset.filled = "false"
+      $("#output").find("img")[2].src = ""
+
 
 $(document).ready ->
   tiny     = [1, 0, 0, 0, 1, 0, 1, 0, 0, 0]
@@ -74,17 +83,41 @@ $(document).ready ->
       total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
       for ingredient in ingredients
-        for count, index in attributes[0]
+        for attribute, index in attributes[0]
           total[index] += parseInt(attributes[ingredient][index])
           #console.log(total)
 
-      console.log("mulligan")
-      for recipe,index in recipes
+      count = 0
+      for recipe, index in recipes
         type = index
         check = true
-        for count,index in attributes[0]
+        for attribute, index in attributes[0]
           check &= total[index] >= recipe[index]
+
         if(check)
-          $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png"
-          console.log($("#output").find("img")[0].src)
-          console.log(types[type])
+          if($("#output").find("img")[0].dataset.filled == "false")
+            $("#output").find("img")[0].dataset.filled = "true"
+            console.log($("#output").find("img")[0].dataset.filled)
+            $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png"
+            console.log($("#output").find("img")[0].src)
+            console.log(types[type])
+          else if($("#output").find("img")[1].dataset.filled == "false")
+            $("#output").find("img")[1].dataset.filled = "true"
+            console.log($("#output").find("img")[1].dataset.filled)
+            $("#output").find("img")[1].src = "img/dishes/" + types[type] + ".png"
+            console.log($("#output").find("img")[1].src)
+            console.log(types[type])
+          else
+            $("#output").find("img")[2].dataset.filled = "true"
+            console.log($("#output").find("img")[2].dataset.filled)
+            $("#output").find("img")[2].src = "img/dishes/" + types[type] + ".png"
+            console.log($("#output").find("img")[2].src)
+            console.log(types[type])
+        else
+          count++
+
+        if(count == 16)
+          $("#output")[0].dataset.filled = "true"
+          console.log($("#output")[0].dataset.filled)
+          $("#output").find("img")[0].src = "img/dishes/mulligan.png"
+          console.log("mulligan")

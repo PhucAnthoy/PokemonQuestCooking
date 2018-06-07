@@ -6,6 +6,7 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
+    "coffeescript": "^2.3.1",
     "del": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-recommended": "^2.0.0",

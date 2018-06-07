@@ -24,6 +24,7 @@
               if (filled === "false") {
                 $("#pot").find("div")[index].dataset.filled = "true";
                 ingredients[index] = parseInt(this.dataset.ingredient);
+                image = "img/placed/" + image.slice(image.search("img") + 16);
                 $($("#pot").find("div")[index]).find("img")[0].src = image;
                 ingredientsInPot++;
                 test = false;
@@ -52,7 +53,15 @@
       if (filled === "true") {
         $(this).find("img")[0].src = "";
         this.dataset.filled = "false";
-        return ingredientsInPot--;
+        ingredientsInPot--;
+      }
+      if ($("#output").find("img")[0].dataset.filled === "true") {
+        $("#output").find("img")[0].dataset.filled = "false";
+        $("#output").find("img")[0].src = "";
+        $("#output").find("img")[1].dataset.filled = "false";
+        $("#output").find("img")[1].src = "";
+        $("#output").find("img")[2].dataset.filled = "false";
+        return $("#output").find("img")[2].src = "";
       }
     });
   });
@@ -87,7 +96,7 @@
     recipes = [red, blue, yellow, gray, water, normal, poison, ground, grass, bug, psychic, rock, flying, fire, electric, fighting];
     types = ["red", "blue", "yellow", "gray", "water", "normal", "poison", "ground", "grass", "bug", "psychic", "rock", "flying", "fire", "electric", "fighting"];
     return $("#start").mousedown(function(e) {
-      var check, count, i, index, ingredient, j, k, l, len, len1, len2, len3, recipe, ref, ref1, results, total, type;
+      var attribute, check, count, i, index, ingredient, j, k, l, len, len1, len2, len3, recipe, ref, ref1, results, total, type;
       console.log(ingredients);
       if (ingredientsInPot === 5) {
         console.log("cooking");
@@ -96,12 +105,12 @@
           ingredient = ingredients[i];
           ref = attributes[0];
           for (index = j = 0, len1 = ref.length; j < len1; index = ++j) {
-            count = ref[index];
+            attribute = ref[index];
             total[index] += parseInt(attributes[ingredient][index]);
           }
         }
         //console.log(total)
-        console.log("mulligan");
+        count = 0;
         results = [];
         for (index = k = 0, len2 = recipes.length; k < len2; index = ++k) {
           recipe = recipes[index];
@@ -109,13 +118,37 @@
           check = true;
           ref1 = attributes[0];
           for (index = l = 0, len3 = ref1.length; l < len3; index = ++l) {
-            count = ref1[index];
+            attribute = ref1[index];
             check &= total[index] >= recipe[index];
           }
           if (check) {
-            $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png";
-            console.log($("#output").find("img")[0].src);
-            results.push(console.log(types[type]));
+            if ($("#output").find("img")[0].dataset.filled === "false") {
+              $("#output").find("img")[0].dataset.filled = "true";
+              console.log($("#output").find("img")[0].dataset.filled);
+              $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png";
+              console.log($("#output").find("img")[0].src);
+              console.log(types[type]);
+            } else if ($("#output").find("img")[1].dataset.filled === "false") {
+              $("#output").find("img")[1].dataset.filled = "true";
+              console.log($("#output").find("img")[1].dataset.filled);
+              $("#output").find("img")[1].src = "img/dishes/" + types[type] + ".png";
+              console.log($("#output").find("img")[1].src);
+              console.log(types[type]);
+            } else {
+              $("#output").find("img")[2].dataset.filled = "true";
+              console.log($("#output").find("img")[2].dataset.filled);
+              $("#output").find("img")[2].src = "img/dishes/" + types[type] + ".png";
+              console.log($("#output").find("img")[2].src);
+              console.log(types[type]);
+            }
+          } else {
+            count++;
+          }
+          if (count === 16) {
+            $("#output")[0].dataset.filled = "true";
+            console.log($("#output")[0].dataset.filled);
+            $("#output").find("img")[0].src = "img/dishes/mulligan.png";
+            results.push(console.log("mulligan"));
           } else {
             results.push(void 0);
           }
