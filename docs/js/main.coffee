@@ -1,6 +1,7 @@
 ingredientsInPot = 0
 ingredients = [0, 0, 0, 0, 0]
 
+# Tracks when ingredients are selected to be added to the pot
 $(document).ready ->
   $(".button.ingredients").mousedown (e) ->
     # These two lines are totally unnecessary
@@ -29,8 +30,10 @@ $(document).ready ->
             filled = $("#pot").find("div")[index].dataset.filled
             break unless test
 
+# Tracks when ingredients are selected to be removed from the pot
 $(document).ready ->
   $(".ingredient").mousedown (e) ->
+    e.preventDefault()
     filled = this.dataset.filled
     if(filled == "true")
       $(this).find("img")[0].src = ""
@@ -38,13 +41,14 @@ $(document).ready ->
       ingredientsInPot--
     if($("#output").find("img")[0].dataset.filled == "true")
       $("#output").find("img")[0].dataset.filled = "false"
-      $("#output").find("img")[0].src = ""
+      $("#output").find("div")[0].className = "button output hidden"
       $("#output").find("img")[1].dataset.filled = "false"
-      $("#output").find("img")[1].src = ""
+      $("#output").find("div")[1].className = "button output hidden"
       $("#output").find("img")[2].dataset.filled = "false"
-      $("#output").find("img")[2].src = ""
+      $("#output").find("div")[2].className = "button output hidden"
+      $("#output")[0].dataset.cooked = "false"
 
-
+# Tracks when the start cooking button is pressed and determines what dishes are possible
 $(document).ready ->
   tiny     = [1, 0, 0, 0, 1, 0, 1, 0, 0, 0]
   bluk     = [0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
@@ -77,47 +81,66 @@ $(document).ready ->
   types       = ["red", "blue", "yellow", "gray", "water", "normal", "poison", "ground", "grass", "bug", "psychic", "rock", "flying", "fire", "electric", "fighting"]
 
   $("#start").mousedown (e) ->
+    e.preventDefault()
+    if($("#output")[0].dataset.cooked == "true")
+      return
     console.log(ingredients)
     if(ingredientsInPot == 5)
-      console.log("cooking")
-      total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+      $("#output")[0].dataset.cooked = "true"
+      total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      quality = 0
 
+      # Checks for quality
+      # Totals the attributes of all ingredients in pot
       for ingredient in ingredients
+        if(ingredient > 4)
+          quality++
         for attribute, index in attributes[0]
           total[index] += parseInt(attributes[ingredient][index])
-          #console.log(total)
 
       count = 0
+      # Checks to see if the ingredients in the pot match any recipes
       for recipe, index in recipes
         type = index
         check = true
         for attribute, index in attributes[0]
           check &= total[index] >= recipe[index]
 
+        # Checks for open output slots
+        # Hopefully, there are no recipes with 4 possible dishes
         if(check)
           if($("#output").find("img")[0].dataset.filled == "false")
             $("#output").find("img")[0].dataset.filled = "true"
-            console.log($("#output").find("img")[0].dataset.filled)
             $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png"
-            console.log($("#output").find("img")[0].src)
+            $("#output").find("div")[0].className = "button output"
+            console.log($("#output").find("div")[0].className)
             console.log(types[type])
           else if($("#output").find("img")[1].dataset.filled == "false")
             $("#output").find("img")[1].dataset.filled = "true"
-            console.log($("#output").find("img")[1].dataset.filled)
             $("#output").find("img")[1].src = "img/dishes/" + types[type] + ".png"
-            console.log($("#output").find("img")[1].src)
+            $("#output").find("div")[1].className = "button output"
             console.log(types[type])
           else
             $("#output").find("img")[2].dataset.filled = "true"
-            console.log($("#output").find("img")[2].dataset.filled)
             $("#output").find("img")[2].src = "img/dishes/" + types[type] + ".png"
-            console.log($("#output").find("img")[2].src)
+            $("#output").find("div")[2].className = "button output"
             console.log(types[type])
         else
           count++
 
+        # Will this dish end up being mulligan?
         if(count == 16)
-          $("#output")[0].dataset.filled = "true"
-          console.log($("#output")[0].dataset.filled)
+          $("#output").find("img")[0].dataset.filled = "true"
           $("#output").find("img")[0].src = "img/dishes/mulligan.png"
+          $("#output").find("div")[0]s.className = "button output"
           console.log("mulligan")
+
+      # Quality checker
+      if(quality > 4)
+        console.log("special")
+      else if(quality > 2)
+        console.log("very good")
+      else if(quality > 0)
+        console.log("good")
+      else
+        console.log("bleh")

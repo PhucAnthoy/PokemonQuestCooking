@@ -150,6 +150,7 @@ img {
 }
 
 .cooking_pot {
+    margin-top:10px;
     padding: 0px;
     position: relative;
 }
@@ -185,7 +186,10 @@ img {
 .ingredient._4 {top:39%;left:40%;}
 .ingredient._5 {top:39%;left:64%;}
 
-
+.output {
+    background-color: #FFF4A5;
+    width:30%;
+}
 
 
 

@@ -12,7 +12,7 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
+  <!link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -28,7 +28,7 @@
 
 
   <div class="row">
-    <div class=""></div>
+    <div class="col-1"></div>
     <div class="col-5 no_pad">
       <div id="pot" class="cooking_pot">
         <img src="img/pot.png">
@@ -58,31 +58,31 @@
       </div>
 
       <div id="start" class="div_general row">
-        <div style="margin:10px;width:40%;cursor:pointer;"><img src="img/start%20cooking.png" alt="Start Cooking"></div>
+        <div style="margin:10px;width:40%;cursor:pointer;"><img src="img/start.png" alt="Start Cooking"></div>
       </div>
     </div>
 
-    <div class=""></div>
-    <div class="col-2">
-      <div id="output">
-        <div><img data-filled="false" src=""></div>
-        <div><img data-filled="false" src=""></div>
-        <div><img data-filled="false" src=""></div>
-      </div>
-    </div>
+    <div class="col-1"></div>
+
   </div>
 
   <div class="row">
-    <div class="col-4"></div>
-
-    <div class="col-4"></div>
+    <div class="col-3"></div>
+    <div class="col-6 no_pad">
+      <div id="output" data-cooked="false" class="div_general">
+        <div class="button output hidden"><img style="padding:5px" data-filled="false" src=""></div>
+        <div class="button output hidden"><img style="padding:5px" data-filled="false" src=""></div>
+        <div class="button output hidden"><img style="padding:5px" data-filled="false" src=""></div>
+      </div>
+    </div>
+    <div class="col-3"></div>
   </div>
 
 
 
 
   <!script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha384-fJU6sGmyn07b+uD1nMk7/iSb4yvaowcueiQhfVgQuD98rfva8mcr1eSvjchfpMrH" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
