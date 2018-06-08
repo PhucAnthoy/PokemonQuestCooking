@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1a6233b-e6db-4a9f-bbab-e8dd962d6957" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/ambrosia of legends.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/bug.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/bug.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/electric.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/electric.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/fighting.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/fighting.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/fire.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/fire.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/flying.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/flying.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/grass.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/grass.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/gray.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/gray.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/ground.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/ground.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/mulligan.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/mulligan.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/normal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/poison.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/poison.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/psychic.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/psychic.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/rock.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/rock.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/water.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/water.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/dishes/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/dishes/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/start cooking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/apricorn.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/apricorn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/balm mushroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/balm mushroom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/big root.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/big root.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/bluk berry.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/bluk berry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/fossil.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/fossil.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/honey.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/honey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/icy rock.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/icy rock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/img/ingredients/tiny mushroom.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/img/ingredients/tiny mushroom.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/js/main.coffee" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/main.coffee" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/js/main.js" afterDir="false" />
@@ -37,15 +27,21 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PokemonQuestCooking" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="60" column="78" selection-start-line="60" selection-start-column="78" selection-end-line="60" selection-end-column="78" />
+            <state relative-caret-position="517">
+              <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
               <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -54,11 +50,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.coffee" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/js/main.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+            <state relative-caret-position="386">
+              <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+              <folding>
+                <element signature="e#75#948#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="184" column="17" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -66,8 +74,8 @@
       <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="107" column="4" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
+            <state relative-caret-position="439">
+              <caret line="128" column="6" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -86,10 +94,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/docs/.gitignore" />
-        <option value="$PROJECT_DIR$/docs/js/main.js" />
         <option value="$PROJECT_DIR$/docs/css/main.css" />
-        <option value="$PROJECT_DIR$/docs/index.html" />
+        <option value="$PROJECT_DIR$/docs/js/main.js" />
         <option value="$PROJECT_DIR$/docs/js/main.coffee" />
+        <option value="$PROJECT_DIR$/docs/index.html" />
       </list>
     </option>
   </component>
@@ -199,12 +207,12 @@
       <option name="presentableId" value="Default" />
       <updated>1528382845829</updated>
       <workItem from="1528382849075" duration="14000" />
-      <workItem from="1528383788047" duration="12277000" />
+      <workItem from="1528383788047" duration="16508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12291000" />
+    <option name="totallyTimeSpent" value="16522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -217,12 +225,13 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.328877" />
       <window_info id="Gulp" order="2" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4986631" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.328877" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.328877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" sideWeight="0.5013369" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -257,37 +266,46 @@
       <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="sourcemapFileViewerProvider" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/js/plugins.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="107" column="4" selection-start-line="107" selection-start-column="4" selection-end-line="107" selection-end-column="4" />
+        <state relative-caret-position="439">
+          <caret line="128" column="6" selection-start-line="128" selection-start-column="6" selection-end-line="128" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="108" column="7" selection-start-line="108" selection-start-column="7" selection-end-line="108" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="60" column="78" selection-start-line="60" selection-start-column="78" selection-end-line="60" selection-end-column="78" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="342">
+          <caret line="184" column="17" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/js/main.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="134" column="37" selection-start-line="134" selection-start-column="37" selection-end-line="134" selection-end-column="37" />
+        <state relative-caret-position="386">
+          <caret line="151" column="14" selection-start-line="151" selection-start-column="14" selection-end-line="151" selection-end-column="14" />
+          <folding>
+            <element signature="e#75#948#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="71" column="53" selection-start-line="71" selection-start-column="53" selection-end-line="71" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
