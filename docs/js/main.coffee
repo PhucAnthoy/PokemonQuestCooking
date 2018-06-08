@@ -1,6 +1,17 @@
 ingredientsInPot = 0
 ingredients = [0, 0, 0, 0, 0]
 
+reset = () ->
+  $("#quality").find("img")[0].src = ""
+  if($("#output").find("img")[0].dataset.filled == "true")
+    $("#output").find("img")[0].dataset.filled = "false"
+    $("#output").find("div")[0].className = "button output hidden"
+    $("#output").find("img")[1].dataset.filled = "false"
+    $("#output").find("div")[1].className = "button output hidden"
+    $("#output").find("img")[2].dataset.filled = "false"
+    $("#output").find("div")[2].className = "button output hidden"
+    $("#output")[0].dataset.cooked = "false"
+
 # Tracks when ingredients are selected to be added to the pot
 $(document).ready ->
   $(".button.ingredients").mousedown (e) ->
@@ -39,14 +50,7 @@ $(document).ready ->
       $(this).find("img")[0].src = ""
       this.dataset.filled = "false"
       ingredientsInPot--
-    if($("#output").find("img")[0].dataset.filled == "true")
-      $("#output").find("img")[0].dataset.filled = "false"
-      $("#output").find("div")[0].className = "button output hidden"
-      $("#output").find("img")[1].dataset.filled = "false"
-      $("#output").find("div")[1].className = "button output hidden"
-      $("#output").find("img")[2].dataset.filled = "false"
-      $("#output").find("div")[2].className = "button output hidden"
-      $("#output")[0].dataset.cooked = "false"
+      reset()
 
 # Tracks when the start cooking button is pressed and determines what dishes are possible
 $(document).ready ->
@@ -88,13 +92,13 @@ $(document).ready ->
     if(ingredientsInPot == 5)
       $("#output")[0].dataset.cooked = "true"
       total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-      quality = 0
+      rating = 0
 
       # Checks for quality
       # Totals the attributes of all ingredients in pot
       for ingredient in ingredients
         if(ingredient > 4)
-          quality++
+          rating++
         for attribute, index in attributes[0]
           total[index] += parseInt(attributes[ingredient][index])
 
@@ -113,7 +117,6 @@ $(document).ready ->
             $("#output").find("img")[0].dataset.filled = "true"
             $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png"
             $("#output").find("div")[0].className = "button output"
-            console.log($("#output").find("div")[0].className)
             console.log(types[type])
           else if($("#output").find("img")[1].dataset.filled == "false")
             $("#output").find("img")[1].dataset.filled = "true"
@@ -132,15 +135,33 @@ $(document).ready ->
         if(count == 16)
           $("#output").find("img")[0].dataset.filled = "true"
           $("#output").find("img")[0].src = "img/dishes/mulligan.png"
-          $("#output").find("div")[0]s.className = "button output"
+          $("#output").find("div")[0].className = "button output"
           console.log("mulligan")
 
       # Quality checker
-      if(quality > 4)
-        console.log("special")
-      else if(quality > 2)
-        console.log("very good")
-      else if(quality > 0)
-        console.log("good")
-      else
-        console.log("bleh")
+      console.log(rating)
+      switch rating
+        when 5
+          quality = "special"
+        when 4
+          quality = "very good"
+        when 3
+          quality = "very good"
+        when 2
+          quality = "good"
+        when 1
+          quality = "good"
+        else
+          quality = "basic"
+      console.log(rating)
+
+      $("#quality").find("img")[0].src = "img/quality/" + quality + ".png"
+
+$(document).ready ->
+  $("#reset").mousedown (e) ->
+    e.preventDefault()
+    ingredientsInPot = 0
+    for ingredient in $(".ingredient")
+      ingredient.dataset.filled = "false"
+      $(ingredient).find("img")[0].src = ""
+    reset()

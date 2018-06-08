@@ -126,6 +126,7 @@ body {
 }
 
 div {
+    //border: 1px solid red;
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
        -khtml-user-select: none; /* Konqueror HTML */
@@ -167,10 +168,16 @@ img {
 }
 
 .ingredients {
-    border:0px;
+    border:1px solid #F5B56B;
     display:block;
     width:25%;
+    background-color: #F5B56B;
+    padding:5px;
+    padding-bottom: 10px;
     cursor:pointer;
+    -webkit-border-radius: 10px 10px 10px 10px;
+       -moz-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
 
 }
 
