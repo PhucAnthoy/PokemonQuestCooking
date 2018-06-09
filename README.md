@@ -2,10 +2,12 @@
 
 tl;dr click ingredients, fill pot, hit start, hope it works
 
-WIP. First part will be a cooking screen similar to what is found in Pokemon Quest. The user should be able to select ingredients, hit start cooking, and the output should appear on the side. The GUI is also a WIP. Currently, for recipes that are shared between dishes, the app is only able to show the dish lower in the list. I'm working on getting it to show all dishes that the recipe satisfies, but ofc, only one will actually be made in game. This also doesn't show mulligan. I'll add later.
+Still a huge WIP. GUI needs reworking, but that will wait until after I've finished adding most of the features that I would like. Currently, the app can accept inputs from the ingredient selection panel and cook up a dish from a full pot. It'll display the dish's icon, the quality of the dish, and the type of the dish. 
 
-Second part will be selecting a dish and getting recipes for different qualities. I'll flesh this out some more later.
+As of June 8th, rainbow matter and rainbow shell aren't supported (only because I'm lacking a good icon for the rainbow shell), and thus, the ambrosia of legends isn't supported either. Type logos for mulligan, red stew, blue soda, yellow curry, and gray porridge are non-existant (currently, in the works).
 
-Third part will be selecting a pokemon and seeing which dishes they will likely come from.
+Currently planned:
+Selecting a dish and getting recipes for different qualities. I'll flesh this out some more later.
+Selecting a pokemon and seeing which dishes they will likely come from.
 
 Hopefully, I actually stay motivated to finish this.
