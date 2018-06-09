@@ -1,45 +1,35 @@
 ingredientsInPot = 0
 ingredients = [0, 0, 0, 0, 0]
+potSlots = $("#pot").find("div")
+outputBox = $("#output").find("div")[0]
+outputSlot = $("#output").find("img")[0]
+qualitySlot = $("#quality").find("img")[0]
+typeSlot = $("#type").find("img")[0]
 
 reset = () ->
-  $("#quality").find("img")[0].src = ""
-  if($("#output").find("img")[0].dataset.filled == "true")
-    $("#output").find("img")[0].dataset.filled = "false"
-    $("#output").find("div")[0].className = "button output hidden"
-    $("#output").find("img")[1].dataset.filled = "false"
-    $("#output").find("div")[1].className = "button output hidden"
-    $("#output").find("img")[2].dataset.filled = "false"
-    $("#output").find("div")[2].className = "button output hidden"
-    $("#output")[0].dataset.cooked = "false"
+  outputSlot.src = ""
+  $("#output")[0].dataset.cooked = "false"
+  outputSlot.dataset.filled = "false"
+  outputBox.className = "button output hidden"
+  qualitySlot.src = ""
+  typeSlot.src =""
 
 # Tracks when ingredients are selected to be added to the pot
 $(document).ready ->
   $(".button.ingredients").mousedown (e) ->
-    # These two lines are totally unnecessary
-    switch e.which
-      when 1 # left-click
-        # Disables drag due to mouse being pressed
-        e.preventDefault()
+    # Disables drag due to mouse being pressed
+    e.preventDefault()
 
-        test = true
-        index = 0
+    image = $(this).find("img")[0].src
 
-        if(ingredientsInPot < 5)
-          image = $(this).find("img")[0].src
-          filled = $("#pot").find("div")[0].dataset.filled
-          while true
-            if(filled == "false")
-              $("#pot").find("div")[index].dataset.filled = "true"
-              ingredients[index] = parseInt(this.dataset.ingredient)
-              image = "img/placed/" + image.slice(image.search("img") + 16)
-              $($("#pot").find("div")[index]).find("img")[0].src = image
-              ingredientsInPot++
-              test = false
-            index++
-            if(index == 5)
-              break
-            filled = $("#pot").find("div")[index].dataset.filled
-            break unless test
+    for n in [0..4]
+      if(potSlots[n].dataset.filled == "false")
+        potSlots[n].dataset.filled = "true"
+        ingredients[n] = parseInt(this.dataset.ingredient)
+        image = "img/placed/" + image.slice(image.search("img") + 16)
+        $(potSlots[n]).find("img")[0].src = image
+        ingredientsInPot++
+        return
 
 # Tracks when ingredients are selected to be removed from the pot
 $(document).ready ->
@@ -54,108 +44,90 @@ $(document).ready ->
 
 # Tracks when the start cooking button is pressed and determines what dishes are possible
 $(document).ready ->
-  tiny     = [1, 0, 0, 0, 1, 0, 1, 0, 0, 0]
-  bluk     = [0, 1, 0, 0, 1, 0, 0, 1, 0, 0]
-  apricorn = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0]
-  fossil   = [0, 0, 0, 1, 0, 1, 0, 0, 0, 1]
-  root     = [1, 0, 0, 0, 1, 0, 0, 0, 1, 0]
-  icy      = [0, 1, 0, 0, 0, 1, 0, 0, 0, 1]
-  honey    = [0, 0, 1, 0, 1, 0, 0, 1, 0, 0]
-  balm     = [0, 0, 0, 1, 1, 0, 1, 0, 0, 0]
+  tiny     = [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1]
+  bluk     = [0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1]
+  apricorn = [0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]
+  fossil   = [0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1]
+  root     = [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2]
+  icy      = [0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2]
+  honey    = [0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 2]
+  balm     = [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 2]
+  rainbow  = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3]
+  shell    = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4]
 
-  red      = [4, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-  blue     = [0, 4, 0, 0, 0, 0, 0, 0, 0, 0]
-  yellow   = [0, 0, 4, 0, 0, 0, 0, 0, 0, 0]
-  gray     = [0, 0, 0, 4, 0, 0, 0, 0, 0, 0]
-  water    = [0, 3, 0, 0, 4, 0, 0, 0, 0, 0]
-  normal   = [0, 0, 0, 2, 0, 0, 0, 3, 0, 0]
-  poison   = [0, 0, 0, 3, 0, 0, 4, 0, 0, 0]
-  ground   = [0, 0, 0, 0, 3, 0, 0, 0, 0, 2]
-  grass    = [0, 0, 0, 0, 2, 0, 0, 0, 4, 0]
-  bug      = [0, 0, 3, 0, 0, 0, 0, 4, 0, 0]
-  psychic  = [0, 0, 0, 0, 0, 2, 0, 3, 0, 0]
-  rock     = [0, 0, 0, 0, 0, 4, 0, 0, 0, 2]
-  flying   = [0, 0, 0, 0, 0, 0, 0, 0, 2, 3]
-  fire     = [1, 0, 0, 0, 0, 0, 3, 0, 0, 0]
-  electric = [0, 0, 3, 0, 4, 0, 0, 0, 0, 0]
-  fighting = [0, 0, 0, 0, 0, 0, 2, 3, 0, 0]
+  red      = [4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  blue     = [0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  yellow   = [0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0]
+  gray     = [0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0]
+  water    = [0, 3, 0, 0, 4, 0, 0, 0, 0, 0, 0]
+  normal   = [0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0]
+  poison   = [0, 0, 0, 0, 3, 0, 4, 0, 0, 0, 0]
+  ground   = [0, 0, 0, 0, 3, 0, 0, 0, 0, 2, 0]
+  grass    = [0, 0, 0, 0, 2, 0, 0, 0, 4, 0, 0]
+  bug      = [0, 0, 3, 0, 0, 0, 0, 4, 0, 0, 0]
+  psychic  = [0, 0, 0, 0, 0, 2, 0, 3, 0, 0, 0]
+  rock     = [0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 0]
+  flying   = [0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 0]
+  fire     = [1, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0]
+  electric = [0, 0, 3, 0, 4, 0, 0, 0, 0, 0, 0]
+  fighting = [0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0]
+  ambrosia = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4]
 
-  attributes  = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], tiny, bluk, apricorn, fossil, root, icy, honey, balm]
-  recipes     = [red, blue, yellow, gray, water, normal, poison, ground, grass, bug, psychic, rock, flying, fire, electric, fighting]
-  types       = ["red", "blue", "yellow", "gray", "water", "normal", "poison", "ground", "grass", "bug", "psychic", "rock", "flying", "fire", "electric", "fighting"]
+  attributes  = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], tiny, bluk, apricorn, fossil, root, icy, honey, balm, rainbow, shell]
+  recipes     = [red, blue, yellow, gray, water, normal, poison, ground, grass, bug, psychic, rock, flying, fire, electric, fighting, ambrosia]
+  types       = ["red", "blue", "yellow", "gray", "water", "normal", "poison", "ground", "grass", "bug", "psychic", "rock", "flying", "fire", "electric", "fighting", "ambrosia"]
 
   $("#start").mousedown (e) ->
     e.preventDefault()
     if($("#output")[0].dataset.cooked == "true")
       return
-    console.log(ingredients)
     if(ingredientsInPot == 5)
       $("#output")[0].dataset.cooked = "true"
-      total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-      rating = 0
+      total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
       # Checks for quality
       # Totals the attributes of all ingredients in pot
       for ingredient in ingredients
-        if(ingredient > 4)
-          rating++
-        for attribute, index in attributes[0]
-          total[index] += parseInt(attributes[ingredient][index])
+        for n in [0..11]
+          total[n] += parseInt(attributes[ingredient][n])
 
-      count = 0
+      # Quality checker
+      if(total[11] < 1)
+        rating = "basic"
+      else if(total[11] < 3)
+        rating = "good"
+      else if(total[11] < 5)
+        rating = "very good"
+      else
+        rating = "special"
+      qualitySlot.src = "img/quality/" + rating + ".png"
+
       # Checks to see if the ingredients in the pot match any recipes
       for recipe, index in recipes
-        type = index
         check = true
-        for attribute, index in attributes[0]
-          check &= total[index] >= recipe[index]
+        for attribute in [0..10]
+          check &= total[attribute] >= recipe[attribute]
 
         # Checks for open output slots
         # Hopefully, there are no recipes with 4 possible dishes
+        # I now understand how the game selects the resulting dish
+        # Shoutout to @SciresM on Twitter for datamining and the recipe info dump
         if(check)
-          if($("#output").find("img")[0].dataset.filled == "false")
-            $("#output").find("img")[0].dataset.filled = "true"
-            $("#output").find("img")[0].src = "img/dishes/" + types[type] + ".png"
-            $("#output").find("div")[0].className = "button output"
-            console.log(types[type])
-          else if($("#output").find("img")[1].dataset.filled == "false")
-            $("#output").find("img")[1].dataset.filled = "true"
-            $("#output").find("img")[1].src = "img/dishes/" + types[type] + ".png"
-            $("#output").find("div")[1].className = "button output"
-            console.log(types[type])
-          else
-            $("#output").find("img")[2].dataset.filled = "true"
-            $("#output").find("img")[2].src = "img/dishes/" + types[type] + ".png"
-            $("#output").find("div")[2].className = "button output"
-            console.log(types[type])
-        else
-          count++
+          image = "img/dishes/" + types[index] + ".png"
+          outputSlot.dataset.filled = "true"
+          outputSlot.src = image
+          outputBox.className = "button output"
+          type = "img/types/" + types[index] + ".png"
+          typeSlot.src = type
+          return
 
-        # Will this dish end up being mulligan?
-        if(count == 16)
-          $("#output").find("img")[0].dataset.filled = "true"
-          $("#output").find("img")[0].src = "img/dishes/mulligan.png"
-          $("#output").find("div")[0].className = "button output"
-          console.log("mulligan")
 
-      # Quality checker
-      console.log(rating)
-      switch rating
-        when 5
-          quality = "special"
-        when 4
-          quality = "very good"
-        when 3
-          quality = "very good"
-        when 2
-          quality = "good"
-        when 1
-          quality = "good"
-        else
-          quality = "basic"
-      console.log(rating)
+      # This code only runs when no other dishes were made
+      outputSlot.dataset.filled = "true"
+      outputSlot.src = "img/dishes/mulligan.png"
+      outputBox.className = "button output"
+      console.log("mulligan")
 
-      $("#quality").find("img")[0].src = "img/quality/" + quality + ".png"
 
 $(document).ready ->
   $("#reset").mousedown (e) ->

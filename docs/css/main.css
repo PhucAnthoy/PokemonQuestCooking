@@ -105,24 +105,17 @@ textarea {
 [class*="col-"] {
   float: left;
   padding: 15px;
-  //border: 1px solid red;
+  border: 1px solid red;
 }
 
-.col-1  {width:   8.33%;}
-.col-2  {width:  16.66%;}
-.col-3  {width:  25.00%;}
-.col-4  {width:  33.33%;}
-.col-5  {width:  41.66%;}
-.col-6  {width:  50.00%;}
-.col-7  {width:  58.33%;}
-.col-8  {width:  66.66%;}
-.col-9  {width:  75.00%;}
-.col-10 {width:  83.33%;}
-.col-11 {width:  91.66%;}
-.col-12 {width: 100.00%;}
+h1 {
+    font-family: helvetica;
+    font-size: 300%;
+    text-align: center;
+}
 
 body {
-  background-color: #FEF3D3;
+    background-color: #FEF3D3;
 }
 
 div {
@@ -195,7 +188,7 @@ img {
 
 .output {
     background-color: #FFF4A5;
-    width:30%;
+    width:60%;
 }
 
 
@@ -294,6 +287,91 @@ img {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .col-es-0  {visibility: hidden;}
+    .col-es-1  {width:   8.33%;}
+    .col-es-2  {width:  16.66%;}
+    .col-es-3  {width:  25.00%;}
+    .col-es-4  {width:  33.33%;}
+    .col-es-5  {width:  41.66%;}
+    .col-es-6  {width:  50.00%;}
+    .col-es-7  {width:  58.33%;}
+    .col-es-8  {width:  66.66%;}
+    .col-es-9  {width:  75.00%;}
+    .col-es-10 {width:  83.33%;}
+    .col-es-11 {width:  91.66%;}
+    .col-es-12 {width: 100.00%;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .col-s-0  {visibility: hidden;}
+    .col-s-1  {width:   8.33%;}
+    .col-s-2  {width:  16.66%;}
+    .col-s-3  {width:  25.00%;}
+    .col-s-4  {width:  33.33%;}
+    .col-s-5  {width:  41.66%;}
+    .col-s-6  {width:  50.00%;}
+    .col-s-7  {width:  58.33%;}
+    .col-s-8  {width:  66.66%;}
+    .col-s-9  {width:  75.00%;}
+    .col-s-10 {width:  83.33%;}
+    .col-s-11 {width:  91.66%;}
+    .col-s-12 {width: 100.00%;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-0  {visibility: hidden;}
+    .col-1  {width:   8.33%;}
+    .col-2  {width:  16.66%;}
+    .col-3  {width:  25.00%;}
+    .col-4  {width:  33.33%;}
+    .col-5  {width:  41.66%;}
+    .col-6  {width:  50.00%;}
+    .col-7  {width:  58.33%;}
+    .col-8  {width:  66.66%;}
+    .col-9  {width:  75.00%;}
+    .col-10 {width:  83.33%;}
+    .col-11 {width:  91.66%;}
+    .col-12 {width: 100.00%;}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .col-l-0  {visibility: hidden;}
+    .col-l-1  {width:   8.33%;}
+    .col-l-2  {width:  16.66%;}
+    .col-l-3  {width:  25.00%;}
+    .col-l-4  {width:  33.33%;}
+    .col-l-5  {width:  41.66%;}
+    .col-l-6  {width:  50.00%;}
+    .col-l-7  {width:  58.33%;}
+    .col-l-8  {width:  66.66%;}
+    .col-l-9  {width:  75.00%;}
+    .col-l-10 {width:  83.33%;}
+    .col-l-11 {width:  91.66%;}
+    .col-l-12 {width: 100.00%;}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .col-el-0  {visibility: hidden;}
+    .col-el-1  {width:   8.33%;}
+    .col-el-2  {width:  16.66%;}
+    .col-el-3  {width:  25.00%;}
+    .col-el-4  {width:  33.33%;}
+    .col-el-5  {width:  41.66%;}
+    .col-el-6  {width:  50.00%;}
+    .col-el-7  {width:  58.33%;}
+    .col-el-8  {width:  66.66%;}
+    .col-el-9  {width:  75.00%;}
+    .col-el-10 {width:  83.33%;}
+    .col-el-11 {width:  91.66%;}
+    .col-el-12 {width: 100.00%;}
+}
 
 @media only screen and (min-width: 35em) {
     /* Style adjustments for viewports that meet the condition */
