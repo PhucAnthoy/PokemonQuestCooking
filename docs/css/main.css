@@ -94,6 +94,13 @@ textarea {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+     -webkit-touch-callout: none; /* iOS Safari */
+       -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+          -moz-user-select: none; /* Firefox */
+           -ms-user-select: none; /* Internet Explorer/Edge */
+               user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .row::after {
@@ -116,22 +123,41 @@ h1 {
 
 body {
     background-color: #FEF3D3;
+    display: block;
+    margin: 0px;
 }
 
 div {
-    //border: 1px solid red;
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
 }
 
 img {
     width: 100%;
     height: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li:hover {
+    background-color: #111;
 }
 
 .no_pad {
@@ -143,6 +169,11 @@ img {
     justify-content: center;
 }
 
+.heading {
+    background-color: #de172d;
+    color: #e2e2e2;
+}
+
 .cooking_pot {
     margin-top:10px;
     padding: 0px;
@@ -150,8 +181,7 @@ img {
 }
 
 .button {
-    margin:5px;
-    border:1px solid #232B3F;
+    //border:1px solid #232B3F;
     color: #F6EED7;
     width: 100%;
     background-color: #DEA055;
@@ -161,17 +191,13 @@ img {
 }
 
 .ingredients {
+    margin:5px;
     border:1px solid #F5B56B;
     display:block;
     width:25%;
     background-color: #F5B56B;
-    padding:5px;
-    padding-bottom: 10px;
+    padding:1% 1% 1.8% 1%;
     cursor:pointer;
-    -webkit-border-radius: 10px 10px 10px 10px;
-       -moz-border-radius: 10px 10px 10px 10px;
-            border-radius: 10px 10px 10px 10px;
-
 }
 
 .ingredient {
@@ -188,10 +214,89 @@ img {
 
 .output {
     background-color: #FFF4A5;
-    width:60%;
+    width: 100%;
 }
 
+/* The Modal (background) */
+.modal {
+    display: flex; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: -100%;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    opacity: 0;
+    transition: opacity 0.4s;
+}
 
+.modal.show {
+    top: 0;
+    opacity: 1;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    top: -100%;
+    opacity: 0;
+    transition: top 0.4s, opacity 0.4s;
+}
+
+.modal-content.show {
+    top: 0;
+    opacity: 1;
+}
+
+/* The Close Button */
+.close {
+    color: #565656;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 2px 16px;
+    background-color: #F5B56B;
+}
+
+/* Modal Footer */
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
 
 
 

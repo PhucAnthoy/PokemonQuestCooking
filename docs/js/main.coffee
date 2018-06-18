@@ -10,7 +10,6 @@ reset = () ->
   outputSlot.src = ""
   $("#output")[0].dataset.cooked = "false"
   outputSlot.dataset.filled = "false"
-  outputBox.className = "button output hidden"
   qualitySlot.src = ""
   typeSlot.src =""
 
@@ -73,15 +72,20 @@ $(document).ready ->
   fighting = [0, 0, 0, 0, 0, 0, 2, 3, 0, 0, 0]
   ambrosia = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4]
 
-  attributes  = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], tiny, bluk, apricorn, fossil, root, icy, honey, balm, rainbow, shell]
+  attributes  = [tiny, bluk, apricorn, fossil, root, icy, honey, balm, rainbow, shell]
   recipes     = [red, blue, yellow, gray, water, normal, poison, ground, grass, bug, psychic, rock, flying, fire, electric, fighting, ambrosia]
-  types       = ["red", "blue", "yellow", "gray", "water", "normal", "poison", "ground", "grass", "bug", "psychic", "rock", "flying", "fire", "electric", "fighting", "ambrosia"]
+  types       = ["Red Stew", "Blue Soda", "Yellow Curry", "Gray Porridge", "Mouth-Watering Dip", "Plain Crepe", "Sludge Soup", "Mud Pie", "Veggie Smoothie", "Honey Nectar", "Brain Food", "Stone Soup", "Light-as-Air Casserole", "Hot Pot", "Watt a Rissota", "Get Swole", "Ambrosia of Legends"]
 
   $("#start").mousedown (e) ->
     e.preventDefault()
     if($("#output")[0].dataset.cooked == "true")
+      $(".modal").addClass("show")
+      $(".modal-content").addClass("show")
       return
     if(ingredientsInPot == 5)
+      $(".modal").addClass("show")
+      $(".modal-content").addClass("show")
+
       $("#output")[0].dataset.cooked = "true"
       total = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -92,15 +96,20 @@ $(document).ready ->
           total[n] += parseInt(attributes[ingredient][n])
 
       # Quality checker
-      if(total[11] < 1)
+      if(total[11] < 6)
         rating = "basic"
-      else if(total[11] < 3)
+        expeditions = 2
+      else if(total[11] < 8)
         rating = "good"
-      else if(total[11] < 5)
+        expeditions = 4
+      else if(total[11] < 10)
         rating = "very good"
+        expeditions = 5
       else
         rating = "special"
+        expeditions = 6
       qualitySlot.src = "img/quality/" + rating + ".png"
+      $("#expeditions")[0].innerHTML = expeditions
 
       # Checks to see if the ingredients in the pot match any recipes
       for recipe, index in recipes
@@ -111,21 +120,19 @@ $(document).ready ->
         # Checks for open output slots
         # Hopefully, there are no recipes with 4 possible dishes
         # I now understand how the game selects the resulting dish
-        # Shoutout to @SciresM on Twitter for datamining and the recipe info dump
+        # Shoutout to @SciresM on Twitter for datamining and for the recipe info dump
         if(check)
           image = "img/dishes/" + types[index] + ".png"
           outputSlot.dataset.filled = "true"
           outputSlot.src = image
-          outputBox.className = "button output"
-          type = "img/types/" + types[index] + ".png"
-          typeSlot.src = type
+          $("h2")[0].innerHTML = types[index] + " &aacute; la Cube"
           return
 
 
       # This code only runs when no other dishes were made
       outputSlot.dataset.filled = "true"
       outputSlot.src = "img/dishes/mulligan.png"
-      outputBox.className = "button output"
+      $("h2")[0].innerHTML = "Mulligan Stew &aacute; la Cube"
       console.log("mulligan")
 
 
@@ -137,3 +144,13 @@ $(document).ready ->
       ingredient.dataset.filled = "false"
       $(ingredient).find("img")[0].src = ""
     reset()
+
+$(document).ready ->
+  $("span").mousedown (e) ->
+    $(".modal").removeClass("show")
+    $(".modal-content").removeClass("show")
+
+window.onclick = (e) ->
+  if(event.target == $(".modal")[0])
+    $(".modal").removeClass("show")
+    $(".modal-content").removeClass("show")

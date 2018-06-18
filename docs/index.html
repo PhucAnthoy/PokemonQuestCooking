@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Pokemon Quest Cooking Recipes</title>
-  <meta name="description" content="">
+  <meta name="description" content="Pokemon Quest Cooking Recipes Ingredients">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="manifest" href="site.webmanifest">
@@ -24,15 +24,22 @@
   <!-- Add your site or application content here -->
   <!--<p>Hello world! This is HTML5 Boilerplate.</p>-->
 
-  <div class="div_general">
+  <div class="div_general heading">
     <div class="col-12 no_pad">
       <h1 style="margin: 1% 0%">Pokemon Quest Cooking</h1>
     </div>
   </div>
 
+  <ul>
+    <li>Home</li>
+    <li>What Does This Make?</li>
+    <li>What Can I Make?</li>
+    <li>How Can I Make This?</li>
+    <li>None of these work right now</li>
+  </ul>
+
   <div class="row">
-    <div class="col-1 col-s-1 col-es-0"></div>
-    <div class="col-4 col-s-10 col-es-12 no_pad">
+    <div class="col-6 col-s-12 col-es-12" style="padding:0 3%;">
       <div id="pot" class="cooking_pot">
         <img src="img/pot.png">
         <div class="ingredient _1" data-filled="false"><img src=""></div>
@@ -43,22 +50,22 @@
       </div>
     </div>
 
-    <div class="col-1 col-s-0 col-es-0"></div>
-
-    <div class="col-4 col-s-10 col-es-12" style="padding-top:10px;">
+    <div class="col-6 col-s-12 col-es-12" style="padding-top: 3%;">
       <div class="button" style="padding:10px;">
         <div id="small" class="div_general row">
-          <div class="button ingredients" data-ingredient="1"><img src="img/ingredients/tiny%20mushroom.png"></div>
-          <div class="button ingredients" data-ingredient="2"><img src="img/ingredients/bluk%20berry.png"></div>
-          <div class="button ingredients" data-ingredient="3"><img src="img/ingredients/apricorn.png"></div>
-          <div class="button ingredients" data-ingredient="4"><img src="img/ingredients/fossil.png"></div>
+          <div class="button ingredients" data-ingredient="0"><img src="img/ingredients/tiny%20mushroom.png"></div>
+          <div class="button ingredients" data-ingredient="1"><img src="img/ingredients/bluk%20berry.png"></div>
+          <div class="button ingredients" data-ingredient="2"><img src="img/ingredients/apricorn.png"></div>
+          <div class="button ingredients" data-ingredient="3"><img src="img/ingredients/fossil.png"></div>
+          <div class="button ingredients" data-ingredient="8"><img src="img/ingredients/rainbow%20matter.png"></div>
         </div>
 
         <div id="precious" class="div_general row">
-          <div class="button ingredients" data-ingredient="5"><img src="img/ingredients/big%20root.png"></div>
-          <div class="button ingredients" data-ingredient="6"><img src="img/ingredients/icy%20rock.png"></div>
-          <div class="button ingredients" data-ingredient="7"><img src="img/ingredients/honey.png"></div>
-          <div class="button ingredients" data-ingredient="8"><img src="img/ingredients/balm%20mushroom.png"></div>
+          <div class="button ingredients" data-ingredient="4"><img src="img/ingredients/big%20root.png"></div>
+          <div class="button ingredients" data-ingredient="5"><img src="img/ingredients/icy%20rock.png"></div>
+          <div class="button ingredients" data-ingredient="6"><img src="img/ingredients/honey.png"></div>
+          <div class="button ingredients" data-ingredient="7"><img src="img/ingredients/balm%20mushroom.png"></div>
+          <div class="button ingredients" data-ingredient="9"><img src="img/ingredients/rainbow%20matter.png"></div>
         </div>
       </div>
 
@@ -67,27 +74,43 @@
         <div id="reset" style="margin:10px;padding-top:8px;width:15%;cursor:pointer;"><img src="img/reset.png" alt="Reset Pot"></div>
       </div>
     </div>
-
-    <div class="col-1 col-s-0 col-es-0"></div>
-
   </div>
 
-  <div class="row">
-    <div class="col-4 div_general">
-      <div id="quality" style="width:75%;margin-top:2%"><img src=""></div>
-    </div>
-    <div class="col-3 no_pad">
-      <div id="output" data-cooked="false" class="div_general">
-        <div class="button output hidden"><img style="padding:5px" data-filled="false" src=""></div>
-        <div class="button output hidden"><img style="padding:5px" data-filled="false" src=""></div>
-        <div class="button output hidden"><img style="padding:5px" data-filled="false" src=""></div>
+  <div class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Error: Dish name not found</h2>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div id="output" data-cooked="false" class="button output col-4 col-s-4  col-es-4">
+           <img style="padding:5px" data-filled="false" src="">
+          </div>
+          <div id="quality" class="col-4 col-s-4  col-es-4">
+            <img src="">
+            <h1 id="expeditions" style="margin:10% 0 0;font-size:5vw;"></h1>
+          </div>
+          <div class="col-4 col-s-4 col-es-4"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <h3>Placeholder</h3>
       </div>
     </div>
-    <! Shoutout to KryptonLion from DeviantArt for the free Pokemon Type Logos>
-    <div class="col-4">
-      <div id="type"><img src=""></div>
-    </div>
   </div>
+
+  <! I guess here I'll add in a form for inputting how many of each ingredient you have, and what you can do with them>
+  <!--<div class="row">
+    <div class="div_general">
+      <input type="number" value="0">
+      <input type="number" value="0">
+      <input type="number" value="0">
+      <input type="number" value="0">
+      <input type="number" value="0">
+    </div>
+  </div>-->
 
 
 
